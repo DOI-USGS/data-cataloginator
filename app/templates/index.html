@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <body>
+      <div class="container">
+        <div class="d-flex justify-content-center">
+          <div class="searchbar">
+            <form onsubmit="myFunction(event); return false">
+              Search: <input type="text" name="squery" id="squery">
+              <input type="submit" value="Submit">
+            </form>
+
+            <script>
+              console.log('loading')
+              function myFunction(event) {
+                event.preventDefault();
+                console.log('searching')
+                const data = '';
+                var request = new XMLHttpRequest();
+                request.open("GET", "./static/idx.json", false);
+                request.send(null)
+                var idx = lunr.Index.load(JSON.parse(request.responseText))
+
+
+                var results = idx.search(document.getElementById('squery').value);
+                for (var item in results) {
+                  document.getElementById('container').innerHTML += 'Result: ' + '<a href="/items/' + results[item]['ref'] + '">' + results[item]['ref'] + '</a>'
+                  document.getElementById('container').innerHTML += 'Score: ' + results[item]["score"]
+                  document.getElementById('container').innerHTML += '<br><br>'
+                }
+
+                console.log(results)
+              }
+            </script>
+          </div>
+        </div>
+      </div>
+      <h1>Search Results</h1>
+      <div id="container"></div>
+
+      <div>
+
+        <div id="resultdiv" name="resultdiv">
+          </p>
+        </div>
+
+
+    </body>
+
+{% endblock %}

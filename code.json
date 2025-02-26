@@ -1,0 +1,51 @@
+[
+  {
+    "name": "data-cataloginator",
+    "organization": "U.S. Geological Survey",
+    "description": "This project contains files for creating a data catalog from a spreadsheet of values. It is written in Python and uses open source projects. It is a simple, lightweight, modular, and extensible project. All data aspects are anchored in JSON from the data model to the search index. Features include search, data, an API, and a website. ",
+    "version": "main",
+    "status": "Development",
+
+    "permissions": {
+      "usageType": "openSource",
+      "licenses": [
+        {
+          "name": "Public Domain, CC0-1.0",
+          "URL": "https://code.usgs.gov/cdi/data-cataloginator/-/raw/main/LICENSE.md"
+        }
+      ]
+    },
+
+    "homepageURL": "https://code.usgs.gov/cdi/data-cataloginator",
+    "downloadURL": "https://code.usgs.gov/cdi/data-cataloginator/-/archive/main/data-cataloginator-main.zip",
+    "disclaimerURL": "https://code.usgs.gov/cdi/data-cataloginator/-/raw/main/DISCLAIMER.md",
+    "repositoryURL": "https://code.usgs.gov/cdi/data-cataloginator.git",
+    "vcs": "git",
+
+    "laborHours": 100,
+
+    "tags": [
+      "catalogs",
+      "indexes",
+      "USGS",
+      "usgs_ma|Core Science Systems",
+      "usgs_sc|Science Analytics and Synthesis",
+      "doi|https://doi.org/10.5066/XXXXXXXX",
+      "ipds|IP-XXXXX"
+    ],
+
+    "languages": [
+      "python"
+    ],
+
+    "contact": {
+      "name": "Brandon Serna",
+      "email": "bserna@usgs.gov"
+    },
+
+    "date": {
+      "metadataLastUpdated": "2024-12-30"
+    }
+  }
+]
+
