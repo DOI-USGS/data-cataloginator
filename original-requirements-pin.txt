@@ -32,7 +32,7 @@ pandas==1.5.2
 pathspec==0.10.2
 platformdirs==2.5.4
 prance==0.22.11.4.0
-pydantic==1.10.2
+pydantic==1.10.13
 pygraphviz==1.10
 pyparsing==3.0.9
 pyrsistent==0.16.1
