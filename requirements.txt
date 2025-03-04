@@ -1,0 +1,11 @@
+black
+datamodel-code-generator
+email-validator
+erdantic
+fastapi
+graphql-core
+lunr
+pandas
+pydantic
+strawberry-graphql
+uvicorn

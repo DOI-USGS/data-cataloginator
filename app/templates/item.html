@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<body>
+
+        <body>
+            <h1>ID: {{ id }}</h1>
+            <h2>Data Attributes</h2>
+            {% for key, value in data.items() %}
+            <h5>{{key}}: {{value}}</h5>
+            <br>
+            {% endfor %}
+        </body>
+
+{% endblock %}
