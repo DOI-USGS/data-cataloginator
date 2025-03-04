@@ -1,8 +1,6 @@
 ![](banner.png)
 
-Data catalogs made easy. The Data Cataloginator is written in Python and built using great open source projects like FastAPI, Lunr.js, Pydantic, Jinja2 and Bootstrap. The projects goal is to keep everything simple, lightweight, modular and as easy to extend as possible. All data aspects are anchored in JSON from the data model to the search index.
-
-![Python](https://img.shields.io/badge/python-3.9.21-blue)
+Data catalogs made easy. The Data Cataloginator is written in Python and built using open source projects like FastAPI, Lunr.js, Pydantic, Jinja2 and Bootstrap. The project's goal is to keep everything simple, lightweight, modular and as easy to extend as possible. All data aspects are anchored in JSON from the data model to the search index.
 
 ### Features
 
@@ -22,11 +20,11 @@ The official USGS software release can be found at https://doi.org/10.5066/P1336
 
 Serna, Brandon and Hsu, Leslie, 2025. Data Cataloginator Version 1.0.0, U.S. Geological Survey software release, https://doi.org/10.5066/P1336TXZ.
 
-A provisional, development version is available at https://github.com/usgs/data-cataloginator. 
+IP-174120
+
+A provisional, development version is available at https://github.com/DOI-USGS/data-cataloginator. 
 
 The main branch will have the most up-to-date version of the code.  
-
-IP-174120
 
 ## Contacts
 - Brandon Serna (bserna@usgs.gov), Lead developer
@@ -35,9 +33,13 @@ IP-174120
 
 ## Getting started
 
+__Requirements__
+
+The [requirements.txt](/requirements.txt) file lists required python packages for running the Data Cataloginator.
+
 __Installation notes__
 
-Pygraphviz is a difficult install
+Pygraphviz is a difficult install. You can try:
 
 ```sh
 python3 -m pip install \
@@ -47,14 +49,40 @@ python3 -m pip install \
                 pygraphviz
 ```
 
-```bash
+__Data Cataloginating__
 
-make all
+The commands to data cataloginate a .csv of example data into a running, searchable data catalog are all in the Makefile.
 
-cd app
-uvicorn main:app --reload
+However, we have found that some commands do not execute unless you run them on the commandline. We suggest that you run each of the commands in the Makefile individually from the commandline and verify that they executed. 
+
+In practice, if you have a new data file and want to create a new catalog:
+```	
+rm data/individual_json/*.json
+rm app/static/idx.json
+rm idx.json
+rm *.pyc
+
+python3 scripts/to_json.py
+
+python3 scripts/build_search.py
+cp idx.json app/static/idx.json
+
+datamodel-codegen --input data/records.json --input-file-type json --output scripts/data_model.py --output-model-type pydantic_v2.BaseModel
+
+python3 scripts/to_pydantic.py
+mv ./data/diagram.png app/static/images/diagram.png
+echo "Done ✅"
 
 ```
+
+If you just want to run the existing catalog on your local machine, navigate to the app directory and then run uvicorn as follows:
+
+```
+cd app
+uvicorn main:app --reload
+```
+
+Copy and paste the address that appears into your web browser to run the catalog.
 
 ## Hosting
 
@@ -74,9 +102,6 @@ A python server is needed for deployment. It's setup with Uvicorn.
 
 ![](demo/graphql.png)
 
-## Requirements
-
-The [requirements.txt](/requirements.txt) file lists required python packages for running the data catalog.
 
 ## License
 

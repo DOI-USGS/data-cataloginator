@@ -1,0 +1,14 @@
+venv
+css
+fonts
+*.svg
+app/static/favicons/
+app/static/images/
+app/static/js/
+app/static/css/
+app/static/fonts/
+app/static/theme
+app/static/uswds/
+app/static/img/
+*.pyc
+.DS_Store

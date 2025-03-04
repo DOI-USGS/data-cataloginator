@@ -1,4 +1,4 @@
-"""Script to convert tabluar data to individual JSON files
+""" Script to convert tabluar data to individual JSON files
 
 Usage:
     python to_json.py
@@ -11,7 +11,7 @@ Changes:
 import pandas as pd
 import uuid
 
-CSV_DATA_FILE = "./example/statements-2020-2021.csv"
+CSV_DATA_FILE = "./example/statements-2010-2012.csv"
 
 df = pd.read_csv(CSV_DATA_FILE)
 df["id"] = [uuid.uuid4() for _ in range(len(df))]
@@ -23,7 +23,6 @@ df.to_csv("./data/modified.csv", index=False)
 
 # Single JSON file
 df.to_json("./data/records.json", orient="records", default_handler=str)
-
 
 # Multiple JSON files
 def gen_individual_json(df):
