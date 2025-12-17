@@ -1,8 +1,45 @@
 ![](banner.png)
 
-Data catalogs made easy. The Data Cataloginator is written in Python and built using open source projects like FastAPI, Lunr.js, Pydantic, Jinja2 and Bootstrap. The project's goal is to keep everything simple, lightweight, modular and as easy to extend as possible. All data aspects are anchored in JSON from the data model to the search index.
+**Our vision: From spreadsheet to catalog in a day.**
 
-### Features
+Use the Data Cataloginator to quickly take a spreadsheet of resources and turn it into an indexed, searchable, machine-readable catalog for further customization.
+
+
+# Why cataloginate?
+
+Have you ever wished you had a catalog system to organize and access your custom content? 
+
+It seems like catalogs are everywhere, but limited technical staff and resources can make it difficult to build or maintain custom cataloging systems. 
+
+Use the Data Cataloginator for:
+
+- A consistent and transparent cataloging approach, so that your scientific products are not siloed or poorly documented.
+- Greater discoverability and more opportunities for reuse, collaboration, or reproducibility. 
+- Contribution to an open-source tool that can be co-developed and maintained by a community of users to ensure evolution and alignment with user needs. 
+
+# USGS Software Release Information
+
+(SOFTWARE RELEASE IN PROGRESS)
+
+The official USGS software release can be found at https://doi.org/10.5066/P1336TXZ and cited as follows:
+
+Serna, Brandon and Hsu, Leslie, 202X. Data Cataloginator Version 1.0.0, U.S. Geological Survey software release, https://doi.org/10.5066/P1336TXZ.
+
+IP-174120
+
+A provisional, development version is available at https://github.com/DOI-USGS/data-cataloginator. 
+
+The main branch will have the most up-to-date version of the code.  
+
+
+# Detailed Overview 
+
+The Data Cataloginator is a modular, lightweight, transparent, and flexible cataloging tool developed to meet a need for organizing scientific products across diverse use cases, especially for teams with limited developer resources. Open access to the software and its documentation is central to the project’s sustainability and evolution, enabling users to adapt software to their specific needs. Contributions are encouraged to collaborate with the maintainers to ensure the software is continuously improved. This shared development approach is aimed to empower both users and contributors through collective ownership of a tool designed to make scientific products more accessible and discoverable. 
+
+# Features
+
+The Data Cataloginator is written in Python and built using open source projects like FastAPI, Lunr.js, Pydantic, Jinja2 and Bootstrap. The project's goal is to keep everything simple, lightweight, modular and as easy to extend as possible. All data aspects are anchored in JSON from the data model to the search index.
+
 
 🔎 **Search** - Lunr.js based search index
 
@@ -12,26 +49,25 @@ Data catalogs made easy. The Data Cataloginator is written in Python and built u
 
 📄 **Website** - Common HTML Jinja2 templating for easy customization
 
-## USGS Software Release Information
-
-(SOFTWARE RELEASE IN PROGRESS)
-
-The official USGS software release can be found at https://doi.org/10.5066/P1336TXZ and cited as follows:
-
-Serna, Brandon and Hsu, Leslie, 2025. Data Cataloginator Version 1.0.0, U.S. Geological Survey software release, https://doi.org/10.5066/P1336TXZ.
-
-IP-174120
-
-A provisional, development version is available at https://github.com/DOI-USGS/data-cataloginator. 
-
-The main branch will have the most up-to-date version of the code.  
-
-## Contacts
+# Contacts
+- Leslie Hsu (lhsu@usgs.gov), Project lead, core maintainer
 - Brandon Serna (bserna@usgs.gov), Lead developer
-- Leslie Hsu (lhsu@usgs.gov), Contributor and Outreach
+- Grace Donovan (gdonovan@usgs.gov), Collaborator
 
 
-## Getting started
+| Contact if ... | Name |
+| ------------------------- | ------------------------- |
+| You would like to request a demo   | Leslie Hsu | 
+| You have questions about the data model  | Leslie Hsu | 
+| You have an issue running or deploying | Leslie Hsu
+| You have questions about technical architecture | Brandon Serna | 
+
+
+# Getting started
+
+Want to try it out yourself? Users who have some familiarity with setting up and running python code can get started themselves with the information below. 
+
+If you would like to request a demo instead, contact Leslie Hsu, lhsu@usgs.gov.
 
 __Requirements__
 
@@ -39,7 +75,7 @@ The [requirements.txt](/requirements.txt) file lists required python packages fo
 
 __Installation notes__
 
-Pygraphviz is a difficult install. You can try:
+You may run into issues with installing Pygraphviz. You can try:
 
 ```sh
 python3 -m pip install \
@@ -88,18 +124,28 @@ Copy and paste the address that appears into your web browser to run the catalog
 
 A python server is needed for deployment. It's setup with Uvicorn.
 
-## Demo
+## Example screenshots
 
+The following screenshots show the catalog capabilities that come "out of the box" and are then available for further customization. 
+
+If you would like to suggest further customizations or features, you can use the Issues feature of this repository, or contact Leslie Hsu, lhsu@usgs.gov. 
+
+Implementation of the government website header:
 ![](demo/Header.png)
 
+Simple home page:
 ![](demo/home.png)
 
+Example search for a string and results:
 ![](demo/search.png)
 
+Example landing page for a result item:
 ![](demo/landing.png)
 
+Example API:
 ![](demo/api.png)
 
+Example GraphQL:
 ![](demo/graphql.png)
 
 
